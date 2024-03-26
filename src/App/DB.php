@@ -22,6 +22,7 @@ class DB
         $pwd = '';
         try{
             $this->dbconn = new PDO($dns, $user, $pwd);
+
         }catch(PDOException $exception){
             echo 'connection not successful:', $exception->getMessage();
         }

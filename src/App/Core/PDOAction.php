@@ -7,7 +7,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Psr7\Factory\ResponseFactory;
 use Slim\Psr7\Factory\StreamFactory;
-use Model\Car;
+use Model\Blog;
 
 
 class PDOAction extends Action
@@ -15,11 +15,11 @@ class PDOAction extends Action
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {   //проверяем вызов по id
-        $car = Car::getById(2);
-        $body = print_r($car,true);
+        $blog = Blog::getById(2);
+        $body = print_r($blog,true);
 
-        $car->setColor('red');
-        $car->save();
+        $blog->setColor('red');
+        $blog->save();
 
 
 
